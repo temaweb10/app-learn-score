@@ -1,18 +1,25 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import negativeImage from "./img/negative.jpg";
+import positiveImage from "./img/positive.jpg";
 function App() {
   const [score, setScore] = useState(
     localStorage.getItem("learn-score")
-      ? localStorage.getItem("learn-score")
+      ? Number(localStorage.getItem("learn-score"))
       : 0
   );
 
   useEffect(() => {
-    localStorage.setItem("learn-score", score);
+    localStorage.setItem("learn-score", Number(score));
   }, [score]);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        backgroundImage: `url(${score < 0 ? negativeImage : positiveImage})`,
+      }}
+    >
       <header className="App-header">
         <span
           className="App-learn-score"
@@ -21,10 +28,16 @@ function App() {
           {score}
         </span>
         <div className="App-buttons">
-          <button className="App-button" onClick={() => setScore(score - 3)}>
+          <button
+            className="App-button"
+            onClick={() => setScore(Number(score) - 3)}
+          >
             -3
           </button>
-          <button className="App-button" onClick={() => setScore(score + 2)}>
+          <button
+            className="App-button"
+            onClick={() => setScore(Number(score) + 2)}
+          >
             +2
           </button>
         </div>
