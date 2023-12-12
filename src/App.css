@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.App-button {
+  min-width: 10%;
+  min-height: 60px;
+  font-family: monospace;
+  color: #111;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 12px;
+  border: 1px solid rgba(96, 96, 96, 1);
+  border-radius: 12px;
+  background-color: #fff;
+  transition: 2s;
+}
+
+.App-button:hover {
+  background-color: #ebeaea;
+  cursor: pointer;
+}
+
+.App-button:first-child {
+  margin-right: 12px;
+  border-right: 1px solid rgba(96, 96, 96, 1);
+}
+
+.App-learn-score {
+  font-size: 7rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: red;
+}
